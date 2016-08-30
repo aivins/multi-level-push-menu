@@ -192,7 +192,8 @@
 					    .text( this.title )
 					    .appendTo( $levelHolder ),
 					    $titleIcon = $( "<i />" )
-					    .prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft" : "floatRight" ) + " cursorPointer " + this.icon } )
+					    .prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft" : "floatRight" ) + " cursorPointer " + "material-icons" } )
+						.text(this.icon)
 					    .prependTo( $title );
 					$titleIcon.bind( clickEventType ,  function(e){
 						titleIconClick(e, $levelHolder, menus);
