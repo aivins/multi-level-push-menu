@@ -331,7 +331,8 @@
 			// Create item group DOM element
 			function createItemGroupIcon( $itemAnchor ) {
 				var $itemGroupIcon = $( "<i />" )
-					.attr( { "class" : ( ( instance.settings.direction == 'rtl' ) ? " floatRight iconSpacing_rtl " : " floatLeft iconSpacing_ltr " ) + instance.settings.groupIcon } )
+					.attr( { "class" : ( ( instance.settings.direction == 'rtl' ) ? " floatRight iconSpacing_rtl " : " floatLeft iconSpacing_ltr " ) + 'material-icons' } )
+					.text(instance.settings.groupIcon)
 					.prependTo( $itemAnchor );
 			}
 
