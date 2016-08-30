@@ -305,7 +305,8 @@
 				    .text( instance.settings.backText )
 				    .appendTo( $backItem ),
 				    $backItemIcon = $( "<i />" )
-				    .prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft " : "floatRight " ) + instance.settings.backItemIcon } )
+				    .prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft " : "floatRight " ) + 'material-icons' } )
+					.text(instance.settings.backItemIcon)
 				    .prependTo( $backItemAnchor );
 				$backItemAnchor.bind( clickEventType , function(e){
 					backItemAnchorClick(e, $levelHolder);
