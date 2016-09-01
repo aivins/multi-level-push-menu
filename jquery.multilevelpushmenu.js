@@ -354,7 +354,8 @@
 				    .text( item.name )
 				    .appendTo( $item ),
 				    $itemIcon = $( "<i />" )
-					.prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft " : "floatRight " ) + item.icon } )
+					.prop( { "class" : ( ( instance.settings.direction == 'rtl' ) ? "floatLeft " : "floatRight " ) + 'material-icons' } )
+					.text(item.icon)
 				    .prependTo( $itemAnchor );
 				if(item.items) {
 					$itemAnchor.bind( clickEventType , function(e){
