@@ -42,6 +42,7 @@
 				overlapWidth: 40,
 				preventItemClick: true,
 				preventGroupItemClick: true,
+				squashContainers: false,
 				swipe: 'both',
 				durationSlideOut: 400,
 				durationSlideDown: 500,
@@ -621,10 +622,13 @@
 						lM = isInt( lMr ) ? lMr : 0,
 						rMr = parseInt( $( this ).css( 'margin-right' ) ),
 						rM = isInt( rMr ) ? rMr : 0;
-					$( this ).stop().animate({
-						marginLeft:  lM + ( ( instance.settings.direction == 'rtl' ) ? (-1) : 1 ) * absMove,
-						marginRight: rM + ( ( instance.settings.direction == 'rtl' ) ? 1 : (-1) ) * absMove
-					}, instance.settings.durationSlideOut);
+					var marginAnimations = {
+						marginLeft:  lM + ( ( instance.settings.direction == 'rtl' ) ? (-1) : 1 ) * absMove
+					};
+					if (instance.settings.squashContainers == false) {
+						marginAnimations.marginRight = rM + ( ( instance.settings.direction == 'rtl' ) ? 1 : (-1) ) * absMove;
+					}
+					$( this ).stop().animate(marginAnimations, instance.settings.durationSlideOut);
 				});
 			}
 
